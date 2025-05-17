@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Componente Wrapper Genérico</title>
+  <style>
+    .wrapper {
+      border: 2px dashed blue;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .profile-card {
+      border: 1px solid gray;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app"></div>
+
+  <script>
+    function Wrapper(contentHtml) {
+      return `<div class="wrapper">${contentHtml}</div>`;
+    }
+
+    function ProfileCard(name, role) {
+      return `
+        <div class="profile-card">
+          <h2>${name}</h2>
+          <p>${role}</p>
+        </div>
+      `;
+    }
+
+    const simpleText = Wrapper('<p>designer gráfico, design de interface ou design de experiência do usuário (UX).</p>');
+    const profile = Wrapper(ProfileCard('Gabriel dos Santos', 'Design'));
+    document.getElementById('app').innerHTML = simpleText + profile;
+  </script>
+
+</body>
+</html>

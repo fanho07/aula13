@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Saudação Personalizada React</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #eef2f3;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function SaudacaoUsuario(props) {
+      return <p>Olá, {props.nome}! Bem-vindo(a)!</p>;
+    }
+
+    function App() {
+      return (
+        <div>
+          <h1>Saudações</h1>
+          <SaudacaoUsuario nome="Seu Nome" />
+          <SaudacaoUsuario nome="Turma LPV" />
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>
